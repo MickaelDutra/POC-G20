@@ -2,18 +2,16 @@ package br.com.cwi.intellifinance.domain.enitty;
 
 import br.com.cwi.intellifinance.domain.enums.CategoriaProduto;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
-import java.time.ZonedDateTime;
-import java.util.Map;
+import java.time.LocalDateTime;
 
+@Builder(toBuilder = true)
+@NoArgsConstructor @AllArgsConstructor
 @Entity
 @Table(name = "produto")
 @Getter
@@ -30,22 +28,16 @@ public class Produto {
     private Integer versao;
     private String descricaoTecnica;
     private String descricaoHumanizada;
-    private String perfilIndicado;
-    private BigDecimal rendaMinima;
     private BigDecimal taxaJurosMensal;
     private BigDecimal valorMinimo;
     private BigDecimal valorMaximo;
     private Integer prazoMinimoMeses;
     private Integer prazoMaximoMeses;
-    @JdbcTypeCode(SqlTypes.JSON)
-    private Map<String, Object> criteriosElegibilidade;
-    @JdbcTypeCode(SqlTypes.JSON)
-    private Map<String, Object> variaveisSimulacao;
-    private Boolean ativo;
+    private boolean ativo;
 
     @CreatedDate
     @Column(updatable = false)
-    private ZonedDateTime criadoEm;
+    private LocalDateTime criadoEm;
     @LastModifiedDate
-    private ZonedDateTime atualizadoEm;
+    private LocalDateTime atualizadoEm;
 }
