@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_DB:       intellifinance
-      POSTGRES_USER:     postegre
+      POSTGRES_USER:     postegres
       POSTGRES_PASSWORD: 1234
     volumes:
       - postgres_data:/var/lib/postgresql/data  
@@ -24,7 +24,7 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: ./api
       dockerfile: Dockerfile
     container_name: app_backend
     restart: unless-stopped
@@ -52,7 +52,7 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: ./app
       dockerfile: Dockerfile
     container_name: app_frontend
     restart: unless-stopped
