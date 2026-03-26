@@ -9,7 +9,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "contratacao")
@@ -21,8 +21,6 @@ public class Contratacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long sessaoId;
-    private Long simulacaoId;
     private Long clienteId;
     @ManyToOne
     @JoinColumn(name = "produto_id")
@@ -38,7 +36,7 @@ public class Contratacao {
 
     @CreatedDate
     @Column(updatable = false)
-    private ZonedDateTime criadoEm;
+    private LocalDateTime criadoEm;
     @LastModifiedDate
-    private ZonedDateTime atualizadoEm;
+    private LocalDateTime atualizadoEm;
 }
