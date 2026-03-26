@@ -5,9 +5,11 @@ services:
     image: postgres:14
     container_name: app_database
     restart: unless-stopped
+    ports:                  
+      - "5433:5432"
     environment:
       POSTGRES_DB:       intellifinance
-      POSTGRES_USER:     postegres
+      POSTGRES_USER:     postgres
       POSTGRES_PASSWORD: 1234
     volumes:
       - postgres_data:/var/lib/postgresql/data  
@@ -15,7 +17,7 @@ services:
     networks:
       - backend_network     
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postegre -d intellifinance"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d intellifinance"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -32,7 +34,7 @@ services:
     - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL:             jdbc:postgresql://database:5432/intellifinance
-      SPRING_DATASOURCE_USERNAME:        postegre
+      SPRING_DATASOURCE_USERNAME:        postgres
       SPRING_DATASOURCE_PASSWORD:        1234
       SPRING_JPA_HIBERNATE_DDL_AUTO:     validate
       SERVER_PORT:                       8080
