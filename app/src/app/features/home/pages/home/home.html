@@ -1,20 +1,30 @@
 <div class="home">
   <app-header />
 
-  <main class="home__main">
-    <div class="home__hero">
-      <app-balance-card />
+  <div class="home__hero-zone">
+    <app-balance-card />
+    <div class="home__wave" aria-hidden="true">
+      <svg viewBox="0 0 480 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,28 C60,52 160,8 280,30 C370,46 440,14 480,22 L480,52 L0,52 Z" fill="#F5F5F6" />
+      </svg>
     </div>
+  </div>
 
-    <app-actions-grid />
+  <main class="home__main">
+    <div class="home__actions-lift">
+      <app-actions-grid />
+    </div>
 
     <section class="home__highlights">
       <div class="home__highlights-header">
         <h2 class="home__section-title">Destaques pra você</h2>
       </div>
       <div class="home__highlights-scroll">
-        @for (card of highlights; track card.title) {
-          <div class="highlight-card">
+        @for (card of highlights; track card.title; let i = $index) {
+          <div
+            class="highlight-card highlight-card--{{ card.variant }}"
+            [style.animation-delay]="i * 60 + 'ms'"
+          >
             <span class="highlight-card__tag">{{ card.tag }}</span>
             <h3 class="highlight-card__title">{{ card.title }}</h3>
             <p class="highlight-card__desc">{{ card.description }}</p>
@@ -26,7 +36,7 @@
 
     <app-quick-access-card />
 
-    <section class="home__news">
+    <section class="home__news" role="button" tabindex="0">
       <div class="home__news-inner">
         <div class="home__news-icon">
           <svg
@@ -39,7 +49,7 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <circle cx="12" cy="12" r="10" />
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
             <path d="M12 8v4l3 3" />
           </svg>
         </div>
@@ -53,7 +63,7 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
+          stroke-width="2.5"
           stroke-linecap="round"
           stroke-linejoin="round"
         >
@@ -71,86 +81,88 @@
           [class.bottom-nav__item--active]="item.active"
           type="button"
         >
-          <div class="bottom-nav__icon">
-            @switch (item.icon) {
-              @case ('home') {
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
+          <div class="bottom-nav__icon-wrap">
+            <div class="bottom-nav__icon">
+              @switch (item.icon) {
+                @case ('home') {
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                  </svg>
+                }
+                @case ('activity') {
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                  </svg>
+                }
+                @case ('pix') {
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                  </svg>
+                }
+                @case ('benefits') {
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    />
+                  </svg>
+                }
+                @case ('menu') {
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                  </svg>
+                }
               }
-              @case ('activity') {
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-              }
-              @case ('pix') {
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
-                </svg>
-              }
-              @case ('benefits') {
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                  />
-                </svg>
-              }
-              @case ('menu') {
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-              }
-            }
+            </div>
           </div>
           <span class="bottom-nav__label">{{ item.label }}</span>
         </button>

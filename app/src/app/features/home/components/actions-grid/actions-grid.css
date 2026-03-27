@@ -6,11 +6,12 @@
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
-  padding: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-1);
+  animation: scaleIn 0.35s ease;
 }
 
 .actions-grid__inner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
+  gap: 0;
 }

@@ -25,11 +25,19 @@ export class Home {
       title: 'Seu dinheiro rendendo',
       description: 'Invista a partir de R$ 1 e veja seu saldo crescer todo dia.',
       tag: 'Novidade',
+      variant: 'primary',
     },
     {
       title: 'Empréstimo pré-aprovado',
       description: 'Até R$ 50.000 com as melhores taxas do mercado.',
       tag: 'Oferta',
+      variant: 'secondary',
+    },
+    {
+      title: 'Cashback em tudo',
+      description: 'Ganhe de volta em cada compra no seu cartão.',
+      tag: 'Exclusivo',
+      variant: 'dark',
     },
   ];
 }

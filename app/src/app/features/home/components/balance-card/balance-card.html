@@ -10,6 +10,8 @@
     <span class="balance-card__exit">Sair</span>
   </div>
 
+  <div class="balance-card__divider"></div>
+
   <div class="balance-card__body">
     <div class="balance-card__label-row">
       <span class="balance-card__label">Meu saldo</span>
@@ -21,8 +23,8 @@
       >
         @if (hidden()) {
           <svg
-            width="18"
-            height="18"
+            width="17"
+            height="17"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -38,8 +40,8 @@
           </svg>
         } @else {
           <svg
-            width="18"
-            height="18"
+            width="17"
+            height="17"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -62,7 +64,7 @@
     </p>
   </div>
 
-  <div class="balance-card__footer">
+  <div class="balance-card__stats">
     <div class="balance-card__stat">
       <div class="balance-card__stat-icon balance-card__stat-icon--in">
         <svg
@@ -90,9 +92,7 @@
         </p>
       </div>
     </div>
-
     <div class="balance-card__stat-divider"></div>
-
     <div class="balance-card__stat">
       <div class="balance-card__stat-icon balance-card__stat-icon--out">
         <svg
