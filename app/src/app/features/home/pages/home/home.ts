@@ -3,14 +3,13 @@ import { AppHeader } from '../../components/app-header/app-header';
 import { BalanceCard } from '../../components/balance-card/balance-card';
 import { ActionsGrid } from '../../components/actions-grid/actions-grid';
 import { QuickAccessCard } from '../../components/quick-access-card/quick-access-card';
-import { AiFloatingMenu } from '../../components/ai-floating-menu/ai-floating-menu';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.html',
   styleUrl: './home.css',
   standalone: true,
-  imports: [AppHeader, BalanceCard, ActionsGrid, QuickAccessCard, AiFloatingMenu],
+  imports: [AppHeader, BalanceCard, ActionsGrid, QuickAccessCard],
 })
 export class Home {
   readonly navItems = [

@@ -47,6 +47,67 @@
   letter-spacing: -0.3px;
 }
 
+.app-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.app-header__ia-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px 6px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.app-header__ia-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.app-header__ia-btn:active {
+  transform: scale(0.97);
+}
+
+.app-header__ia-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: ia-shimmer 2.4s ease-in-out infinite;
+}
+
+.app-header__ia-label {
+  line-height: 1;
+}
+
+@keyframes ia-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 .app-header__bell {
   width: 36px;
   height: 36px;
