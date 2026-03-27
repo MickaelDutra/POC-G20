@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-balance-card',
@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './balance-card.css',
   standalone: true,
 })
-export class BalanceCard {}
+export class BalanceCard {
+  readonly hidden = signal(false);
+
+  toggleBalance() {
+    this.hidden.update((v) => !v);
+  }
+}
