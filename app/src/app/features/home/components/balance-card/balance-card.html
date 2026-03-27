@@ -1,0 +1,124 @@
+<div class="balance-card">
+  <div class="balance-card__top">
+    <div class="balance-card__user">
+      <div class="balance-card__user-avatar">JO</div>
+      <div class="balance-card__user-info">
+        <p class="balance-card__user-greeting">Olá, João</p>
+        <p class="balance-card__user-account">CC 0001 / 12345-6</p>
+      </div>
+    </div>
+    <span class="balance-card__exit">Sair</span>
+  </div>
+
+  <div class="balance-card__divider"></div>
+
+  <div class="balance-card__body">
+    <div class="balance-card__label-row">
+      <span class="balance-card__label">Meu saldo</span>
+      <button
+        class="balance-card__eye"
+        type="button"
+        [attr.aria-label]="hidden() ? 'Exibir saldo' : 'Ocultar saldo'"
+        (click)="toggleBalance()"
+      >
+        @if (hidden()) {
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"
+            />
+            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+            <line x1="1" y1="1" x2="23" y2="23" />
+          </svg>
+        } @else {
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+        }
+      </button>
+    </div>
+    <p class="balance-card__amount">
+      @if (hidden()) {
+        ••••••
+      } @else {
+        R$ 12.450,90
+      }
+    </p>
+  </div>
+
+  <div class="balance-card__stats">
+    <div class="balance-card__stat">
+      <div class="balance-card__stat-icon balance-card__stat-icon--in">
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="12" y1="19" x2="12" y2="5" />
+          <polyline points="5 12 12 5 19 12" />
+        </svg>
+      </div>
+      <div>
+        <p class="balance-card__stat-label">Entradas</p>
+        <p class="balance-card__stat-value balance-card__stat-value--in">
+          @if (hidden()) {
+            •••••
+          } @else {
+            +R$ 4.000,00
+          }
+        </p>
+      </div>
+    </div>
+    <div class="balance-card__stat-divider"></div>
+    <div class="balance-card__stat">
+      <div class="balance-card__stat-icon balance-card__stat-icon--out">
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <polyline points="19 12 12 19 5 12" />
+        </svg>
+      </div>
+      <div>
+        <p class="balance-card__stat-label">Saídas</p>
+        <p class="balance-card__stat-value balance-card__stat-value--out">
+          @if (hidden()) {
+            •••••
+          } @else {
+            -R$ 851,20
+          }
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

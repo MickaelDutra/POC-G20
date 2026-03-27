@@ -1,0 +1,143 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-header {
+  background: linear-gradient(100deg, #c8243f 0%, #bb2038 60%, #a01b31 100%);
+  height: var(--header-height);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.app-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 var(--spacing-2);
+}
+
+.app-header__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition:
+    background-color 0.15s,
+    transform 0.15s;
+}
+.app-header__avatar:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+.app-header__avatar:active {
+  transform: scale(0.95);
+}
+
+.app-header__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.4px;
+}
+
+.app-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.app-header__ia-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px 6px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+}
+.app-header__ia-btn:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.42);
+}
+.app-header__ia-btn:active {
+  transform: scale(0.96);
+}
+
+.app-header__ia-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.14) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: ia-shimmer 2.6s ease-in-out infinite;
+}
+
+.app-header__ia-label {
+  line-height: 1;
+}
+
+.app-header__bell {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  transition:
+    background-color 0.15s,
+    transform 0.15s;
+}
+.app-header__bell:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.app-header__bell:active {
+  transform: scale(0.92);
+}
+
+.app-header__badge {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  min-width: 17px;
+  height: 17px;
+  border-radius: var(--radius-full);
+  background: #22c55e;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  animation: badgePop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 0 2px #bb2038;
+}

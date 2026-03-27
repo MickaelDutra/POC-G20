@@ -1,0 +1,7 @@
+<section class="actions-grid">
+  <div class="actions-grid__inner">
+    @for (action of actions; track action.icon) {
+      <app-action-button [icon]="action.icon" [label]="action.label" />
+    }
+  </div>
+</section>
