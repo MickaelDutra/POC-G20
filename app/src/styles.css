@@ -1,1 +1,116 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #BB2038;
+  --color-primary-dark: #7E1223;
+  --color-primary-xdark: #46060F;
+  --color-primary-light: #FAC4C7;
+  --color-primary-medium: #F68B93;
+
+  --color-secondary: #515B97;
+  --color-secondary-light: #F0F0F7;
+  --color-secondary-dark: #343B64;
+
+  --color-bg: #F5F5F6;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #F1F2F1;
+  --color-border: #E7E4E4;
+
+  --color-text-primary: #151313;
+  --color-text-secondary: #56504F;
+  --color-text-muted: #A19795;
+
+  --color-success: #128859;
+  --color-success-light: #E8F5F0;
+  --color-warning: #B15100;
+  --color-warning-light: #FFF3E0;
+  --color-error: #CE363F;
+  --color-error-light: #FDECEA;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+
+  --font: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --header-height: 60px;
+  --max-width: 480px;
+
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.14);
+  --shadow-card: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+html, body {
+  min-height: 100dvh;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  padding: 0;
+}
+
+img { max-width: 100%; }
+
+::-webkit-scrollbar { width: 0; height: 0; }
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes expandIn {
+  from { opacity: 0; transform: scale(0.85) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes badgePop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
