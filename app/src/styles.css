@@ -59,9 +59,12 @@
   --hero-gradient: linear-gradient(165deg, #c8243f 0%, #bb2038 40%, #7e1223 100%);
 }
 
-html,
-body {
+html {
   height: 100%;
+}
+
+body {
+  min-height: 100%;
   font-family: var(--font);
   font-size: 14px;
   line-height: 1.5;
@@ -69,7 +72,6 @@ body {
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior: none;
 }
 
 a {

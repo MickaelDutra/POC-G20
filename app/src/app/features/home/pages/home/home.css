@@ -10,10 +10,6 @@
   max-width: var(--max-width);
   margin: 0 auto;
   position: relative;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
 }
 
 .home__hero-zone {
@@ -24,7 +20,7 @@
 
 .home__wave {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   right: 0;
   line-height: 0;
@@ -74,7 +70,6 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
   padding-bottom: 4px;
   padding-right: var(--spacing-2);
   margin-right: calc(-1 * var(--spacing-2));
@@ -117,6 +112,9 @@
 }
 .highlight-card--dark {
   background: linear-gradient(135deg, #343030 0%, #1e1a1a 60%, #151313 100%);
+}
+.highlight-card--dark-red {
+  background: linear-gradient(135deg, #8f1a2e 0%, #7e1223 50%, #46060f 100%);
 }
 
 .highlight-card__tag {
