@@ -24,14 +24,15 @@
   width: 52px;
   height: 52px;
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  background: #fafafa;
+  border: 1px solid #efefef;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-primary);
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.09),
-    0 0 0 1px rgba(0, 0, 0, 0.04);
+    0 2px 8px rgba(0, 0, 0, 0.07),
+    0 0 0 1px rgba(0, 0, 0, 0.03);
   transition:
     background-color 0.15s,
     box-shadow 0.15s;

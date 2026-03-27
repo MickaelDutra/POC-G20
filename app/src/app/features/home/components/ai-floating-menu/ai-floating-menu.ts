@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-ai-floating-menu',
@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './ai-floating-menu.css',
   standalone: true,
 })
-export class AiFloatingMenu {}
+export class AiFloatingMenu implements OnInit {
+  expanded = signal(true);
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.expanded.set(false);
+    }, 10000);
+  }
+}

@@ -1,10 +1,42 @@
-<div class="ai-fab">
-  <button class="ai-fab__btn" type="button" aria-label="Assistente IA">
-    <div class="ai-fab__pulse"></div>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"/>
-      <path d="M8 12h.01M12 12h.01M16 12h.01"/>
+<button
+  class="ai-fab"
+  [class.ai-fab--expanded]="expanded()"
+  type="button"
+  aria-label="Pergunte para a IA"
+>
+  <div class="ai-fab__ring-wrap">
+    <svg class="ai-fab__ring" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="orb-grad-open" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#BB2038" />
+          <stop offset="45%" stop-color="#515B97" />
+          <stop offset="100%" stop-color="#343B64" />
+        </linearGradient>
+        <linearGradient id="orb-grad-closed" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#BB2038">
+            <animate attributeName="stop-color" values="#BB2038;#515B97;#343B64;#BB2038" dur="3s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="50%" stop-color="#515B97">
+            <animate attributeName="stop-color" values="#515B97;#343B64;#BB2038;#515B97" dur="3s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="100%" stop-color="#343B64">
+            <animate attributeName="stop-color" values="#343B64;#BB2038;#515B97;#343B64" dur="3s" repeatCount="indefinite" />
+          </stop>
+        </linearGradient>
+      </defs>
+
+      <circle
+        class="ai-fab__arc"
+        cx="20"
+        cy="20"
+        r="14"
+        fill="none"
+        [attr.stroke]="expanded() ? 'url(#orb-grad-open)' : 'url(#orb-grad-closed)'"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
     </svg>
-    <span class="ai-fab__label">IA</span>
-  </button>
-</div>
+  </div>
+
+  <span class="ai-fab__label">Pergunte para a IA</span>
+</button>
